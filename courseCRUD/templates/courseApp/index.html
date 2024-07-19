@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Information</title>
+</head>
+<body>
+    <h1>Course:</h1>
+    <table border="2">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Instructor</th>
+            <th>Rating</th>
+            <th>Action1</th>
+            <th>Action2</th>
+        </thead>
+        {% for course in cources %}
+        <tr>
+            <td>{{course.id}}</td>
+            <td>{{course.name}}</td>
+            <td>{{course.description}}</td>
+            <td>{{course.instructor}}</td>
+            <td>{{course.rating}}</td>
+            <td>
+                <a href="/deleteCourse/{{course.id}}">Delete Course</a>
+            </td>
+            <td>
+                <a href="/updateCourse/{{course.id}}">Update Course</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <br>
+    <br>
+<a href="createCourse">Add Course</a>
+
+</body>
+</html>
